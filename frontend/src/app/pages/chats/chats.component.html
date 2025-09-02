@@ -1,0 +1,26 @@
+<div class="history-container">
+  <h1>Conversation History</h1>
+  <div *ngIf="conversations.length > 0; else noHistory" class="conversation-list">
+    <a *ngFor="let convo of conversations" [routerLink]="['/chat', convo.id]" class="conversation-item">
+      <!--
+        UPDATED SECTION:
+        We now display both the first user message and the first bot response.
+        An *ngIf is used to safely check if the bot response exists.
+      -->
+      <div *ngIf="convo.messages.length > 0" class="convo-preview">
+        <p><strong>You:</strong> {{ convo.messages[0].text | slice:0:80 }}...</p>
+        <p *ngIf="convo.messages.length > 1">
+          <strong>Bot:</strong> {{ convo.messages[1].text | slice:0:80 }}...
+        </p>
+      </div>
+
+      <div class="convo-timestamp">
+        {{ formatTimestamp(convo.timestamp) }}
+      </div>
+    </a>
+  </div>
+  <ng-template #noHistory>
+    <p class="no-history-message">You don't have any saved conversations yet. Start a new chat to see it here!</p>
+  </ng-template>
+</div>
+

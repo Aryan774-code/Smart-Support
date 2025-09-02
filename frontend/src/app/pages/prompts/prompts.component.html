@@ -1,0 +1,13 @@
+<div class="prompts-container">
+  <h1>Sample Prompts</h1>
+  <p>Not sure where to start? Click on a prompt below to begin a conversation!</p>
+  <div class="prompts-list">
+    <a *ngFor="let prompt of samplePrompts"
+       [routerLink]="['/chat']"
+       [queryParams]="{ prompt: prompt }"
+       class="prompt-item">
+      {{ prompt }}
+    </a>
+  </div>
+</div>
+

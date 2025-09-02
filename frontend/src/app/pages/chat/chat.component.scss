@@ -1,0 +1,100 @@
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 105px); // Full viewport height minus navbar and some margin
+  max-width: 800px;
+  margin: 2rem auto;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: sans-serif;
+  background-color: var(--secondary-background-color);
+}
+
+.chat-header {
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--border-color);
+  text-align: right;
+
+  .new-chat-btn {
+    padding: 8px 16px;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    background-color: transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &:hover {
+      background-color: var(--primary-color);
+      color: var(--primary-text-color);
+    }
+  }
+}
+
+.message-area {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.message {
+  padding: 10px 15px;
+  border-radius: 18px;
+  max-width: 75%;
+  p {
+    margin: 0;
+    white-space: pre-wrap; // To respect newlines from the API response
+  }
+}
+
+.user-message {
+  background-color: var(--user-message-bg);
+  color: var(--user-message-text);
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+.bot-message {
+  background-color: var(--bot-message-bg);
+  color: var(--bot-message-text);
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+
+.input-area {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--background-color);
+
+  input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    margin-right: 10px;
+    background-color: var(--secondary-background-color);
+    color: var(--text-color);
+    font-size: 1rem;
+  }
+
+  button {
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--primary-text-color);
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+
+    &:disabled {
+      background-color: #a0cffc; // Keep a distinct disabled color
+      cursor: not-allowed;
+    }
+  }
+}
+

@@ -1,0 +1,29 @@
+<!-- <p>chat works!</p> -->
+
+
+<!-- A simple container for our chat interface -->
+<div class="chat-container">
+
+  <!-- This div will display the conversation history -->
+  <div class="message-area">
+    <div *ngFor="let message of messages" class="message" [ngClass]="{'user-message': message.sender === 'user', 'bot-message': message.sender === 'bot'}">
+      <p>{{ message.text }}</p>
+    </div>
+    <!-- Show a loading indicator while waiting for the bot's response -->
+    <div *ngIf="isLoading" class="message bot-message">
+      <p><i>Typing...</i></p>
+    </div>
+  </div>
+
+  <!-- This is the input area at the bottom -->
+  <div class="input-area">
+    <input
+      type="text"
+      placeholder="Type your message here..."
+      [(ngModel)]="userInput"
+      (keyup.enter)="sendMessage()"
+    />
+    <button (click)="sendMessage()" [disabled]="isLoading || !userInput.trim()">Send</button>
+  </div>
+
+</div>

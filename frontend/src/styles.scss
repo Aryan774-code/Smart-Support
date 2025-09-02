@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* --- THEME DEFINITIONS --- */
+
+/* 1. Default (Light Mode) Color Variables */
+:root {
+  --background-color: #ffffff;
+  --secondary-background-color: #f9f9f9;
+  --text-color: #333333;
+  --secondary-text-color: #555555;
+  --border-color: #e7e7e7;
+  --primary-color: #007bff;
+  --primary-text-color: #ffffff;
+  --card-shadow: 0 4px 8px rgba(0,0,0,0.05);
+
+  --user-message-bg: #007bff;
+  --user-message-text: #ffffff;
+  --bot-message-bg: #f1f1f1;
+  --bot-message-text: #333;
+}
+
+/* 2. Dark Mode Color Variable Overrides */
+/* These styles are applied ONLY when the body has the 'dark' class */
+body.dark {
+  --background-color: #121212;
+  --secondary-background-color: #1e1e1e;
+  --text-color: #e0e0e0;
+  --secondary-text-color: #b0b0b0;
+  --border-color: #333333;
+  --primary-color: #0d6efd; // A slightly brighter blue for dark mode
+  --primary-text-color: #ffffff;
+  --card-shadow: 0 4px 12px rgba(0,0,0,0.2);
+
+  --user-message-bg: #0d6efd;
+  --user-message-text: #ffffff;
+  --bot-message-bg: #333333;
+  --bot-message-text: #e0e0e0;
+}
+
+/* 3. Global Styles using the variables */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

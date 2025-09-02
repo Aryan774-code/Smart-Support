@@ -1,0 +1,85 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-color);
+  padding: 0 2rem;
+  height: 65px;
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+  transition: background-color 0.3s ease;
+}
+
+.navbar-brand .navbar-logo {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+  align-items: center; // Align items for the button
+}
+
+.navbar-links a {
+  color: var(--secondary-text-color);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 5px 0;
+  position: relative;
+  transition: color 0.3s ease;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+  }
+
+  &:hover {
+    color: var(--primary-color);
+  }
+}
+
+.navbar-links a.active {
+  color: var(--primary-color);
+
+  &::after {
+    width: 100%;
+  }
+}
+
+// New styles for the theme toggle button
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--secondary-text-color);
+  padding: 5px;
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+
+  svg {
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    color: var(--primary-color);
+    svg {
+      transform: scale(1.1) rotate(15deg);
+    }
+  }
+}
+
