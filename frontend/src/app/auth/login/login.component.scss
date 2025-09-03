@@ -1,0 +1,132 @@
+// We no longer need to import "sass:color" for this component.
+
+.auth-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 65px);
+  background-color: var(--secondary-background-color);
+  padding: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+.auth-card {
+  background: var(--background-color);
+  padding: 2.5rem 3rem;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.logo {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.subtitle {
+  color: var(--secondary-text-color);
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+
+  label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+  }
+
+  input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--secondary-background-color);
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+    }
+  }
+}
+
+.auth-button {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--primary-text-color);
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: filter 0.3s ease, transform 0.2s ease;
+
+  &:hover:not(:disabled) {
+    // UPDATED: Use a CSS filter to darken the color at runtime.
+    filter: brightness(90%);
+    transform: translateY(-2px);
+  }
+
+  &:disabled {
+    // UPDATED: Use a CSS filter to lighten the color at runtime.
+    filter: brightness(120%);
+    cursor: not-allowed;
+  }
+}
+
+.auth-switch {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--secondary-text-color);
+
+  a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.error-message, .success-message {
+  border-radius: 8px;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.error-message {
+  color: #dc3545;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
+.success-message {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+

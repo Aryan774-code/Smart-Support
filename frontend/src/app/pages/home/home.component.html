@@ -1,6 +1,32 @@
 <div class="home-container">
-  <h1>Welcome to the Smart Support Dashboard</h1>
-  <p>Your intelligent assistant, powered by Gemini.</p>
-  <p>Ask questions, get instant answers, and review your conversation history at any time.</p>
-  <a routerLink="/chat" class="cta-button">Start a New Chat</a>
+  <div class="hero-section">
+    <h1>Welcome to the Smart Support Dashboard</h1>
+    <p>Your intelligent assistant is ready to help. Ask anything, get smart responses instantly.</p>
+
+    <!--
+      UPDATED SECTION:
+      We've wrapped the buttons in a container for better spacing
+      and added a new 'Login' button that navigates to the /login page.
+    -->
+    <div class="cta-buttons">
+      <a routerLink="/chat" class="cta-button primary">Start a New Chat</a>
+      <a routerLink="/login" class="cta-button secondary">Login to Your Account</a>
+    </div>
+  </div>
+
+  <div class="features-section">
+    <div class="feature-card">
+      <h3>Instant Answers</h3>
+      <p>Leverage the power of advanced AI to get immediate answers to your questions.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Conversation History</h3>
+      <p>Never lose track of your conversations. All your chats are saved for you to review later.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Sample Prompts</h3>
+      <p>Not sure where to start? Check out our sample prompts to get the conversation flowing.</p>
+    </div>
+  </div>
 </div>
+

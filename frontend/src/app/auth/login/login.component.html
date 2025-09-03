@@ -1,1 +1,27 @@
-<p>login works!</p>
+<div class="auth-container">
+  <div class="auth-card">
+    <!-- A simple, modern SVG logo -->
+    <svg class="logo" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 1 0 0-8c-2 0-4 1.33-6 4Z"/></svg>
+
+    <h2>Welcome Back!</h2>
+    <p class="subtitle">Please enter your details to sign in.</p>
+
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" [(ngModel)]="credentials.username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" [(ngModel)]="credentials.password" required>
+      </div>
+
+      <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+
+      <button type="submit" class="auth-button" [disabled]="!loginForm.valid">Sign In</button>
+    </form>
+
+    <p class="auth-switch">Don't have an account? <a routerLink="/register">Register here</a></p>
+  </div>
+</div>
+

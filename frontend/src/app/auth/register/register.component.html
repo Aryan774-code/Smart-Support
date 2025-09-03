@@ -1,1 +1,27 @@
-<p>register works!</p>
+<div class="auth-container">
+  <div class="auth-card">
+    <svg class="logo" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 1 0 0-8c-2 0-4 1.33-6 4Z"/></svg>
+
+    <h2>Create Your Account</h2>
+    <p class="subtitle">Sign up to start chatting with our smart assistant.</p>
+
+    <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" [(ngModel)]="credentials.username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" [(ngModel)]="credentials.password" required>
+      </div>
+
+      <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+      <p *ngIf="successMessage" class="success-message">{{ successMessage }}</p>
+
+      <button type="submit" class="auth-button" [disabled]="!registerForm.valid">Register</button>
+    </form>
+    
+    <p class="auth-switch">Already have an account? <a routerLink="/login">Login here</a></p>
+  </div>
+</div>
+
